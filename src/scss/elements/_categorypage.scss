@@ -1,0 +1,104 @@
+.categorypage {
+    padding: 48px 0px 80px;
+
+    &-titles {
+
+        .section-titles {
+            padding: 48px 0px 22px;
+        }
+    }
+
+    &-nav {
+        padding: 32px 0px;
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 7px;
+            @include font(600);
+            font-size: 18px;
+            color: rgba($color: $text, $alpha: 0.5);
+            width: max-content;
+            white-space: nowrap;
+
+            img {
+                width: 30px;
+                height: 30px;
+                flex: 0 0 30px;
+                object-position: center;
+                object-fit: contain;
+            }
+
+            &-active {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 7px;
+                font-size: 18px;
+                @include font(600);
+                color: $brand;
+                width: max-content;
+                white-space: nowrap;
+
+                img {
+                    filter: $filter-brand;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .categorypage {
+        padding: 36px 0px 62px;
+    
+        &-titles {
+    
+            .section-titles {
+                padding: 20px 0px 18px;
+
+                h1,h2,h3 {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &-nav {
+            padding: 20px 0px;
+    
+            &-item {
+                gap: 0px;
+                @include font(500);
+                font-size: 16px;
+                padding: 4px 15px;
+                color: #9E9E9E;
+                border: 1px solid #9E9E9E;  
+                border-radius: 8px;              
+    
+                img {
+                    display: none;
+                }
+    
+                &-active {
+                    gap: 0px;
+                    font-size: 16px;
+                    @include font(500);
+                    color: $brand;
+                    padding: 4px 15px;
+                    border: 1px solid $brand;  
+                    border-radius: 8px;  
+                    img {
+                        display: none;
+                    } 
+                }
+            }
+        }
+    }
+}

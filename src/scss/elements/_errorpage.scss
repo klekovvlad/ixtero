@@ -1,0 +1,59 @@
+.errorpage {
+    padding: 100px 0px;
+
+    .wrapper {
+        display: grid;
+        
+        &-col-2 {
+            grid-template-columns: 40% 1fr;
+        }
+    }
+
+    &-text {
+        padding: 50px 0px;
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .subtitle {
+            margin: 26px 0px 72px;
+            span.accent {
+                display: block;
+            }
+        }
+    }
+
+    span.accent {
+        color: $accent;
+    }
+}
+
+@media (max-width: 767px) {
+    .errorpage {
+        padding: 54px 0px 80px;
+    
+        .wrapper {
+            display: grid;
+            text-align: center;
+            
+            &-col-2 {
+                grid-template-columns: 1fr;
+                grid-gap: 32px;
+            }
+        }
+    
+        &-text {
+            padding: 0px 0px;
+            grid-row-start: 2;
+    
+            .subtitle {
+                margin: 12px 0px 52px;
+                span.accent {
+                    display: inline;
+                }
+            }
+        }
+
+    }
+}

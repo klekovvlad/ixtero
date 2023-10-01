@@ -1,0 +1,35 @@
+.cooperationpage-bottom {
+    padding: 30px 0px 0px 0px;
+    
+    img {
+        margin: 0px auto;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 30px;
+        @include font(700);
+        color: $accent;
+    }
+
+    .logo-img {
+        margin: 36px auto 33px;
+        min-width: 330px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cooperationpage-bottom {
+        padding: 25px 0px 0px 0px;
+    
+        .title {
+            font-size: 20px;
+            line-height: 1.75;
+        }
+    
+        .logo-img {
+            margin: 16px auto 35px;
+            min-width: 232px;
+        }
+    }
+}

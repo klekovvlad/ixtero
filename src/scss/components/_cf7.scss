@@ -1,0 +1,45 @@
+.wpcf7-form-control-wrap {
+    position: relative;
+
+    .wpcf7-not-valid-tip {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: $accent;
+        font-weight: 500;
+        font-size: 14px;
+        transform: translate(0, calc(100% + 14px));
+    }
+}
+
+.wpcf7-form {
+    position: relative;
+
+    .wpcf7-response-output {
+        opacity: 0;
+        color: $text;
+        visibility: hidden;
+        font-size: 18px;
+        position: absolute;
+        background: #fff;
+        border-radius: 10px;
+        border: none !important;
+        border-color: transparent !important;
+        text-align: center;
+        font-weight: 500;
+        margin: 0 !important;
+        padding: 50px !important;
+        box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(100%, 400px);
+        transition: opacity .3s .3s linear;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

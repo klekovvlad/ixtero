@@ -1,0 +1,323 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: $text, $alpha: 0.7);
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s linear;
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .4s linear;
+
+        .popup-body {
+            transform: translate(0, 0);
+            transition: transform .4s linear;
+        }
+    }
+
+    &-body {
+        position: relative;
+        width: min(95%, 1130px);
+        padding: 47px 102px 62px;
+        background: #FFFFFF;
+        box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.08);
+        border-radius: 20px;
+        transform: translate(0, -50px);
+        transition: transform .4s linear;
+    }
+
+    &-title,
+    h2 {
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 18px;
+
+        strong {
+            color: $accent;
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    &-desc {
+        p {
+            line-height: 1.75;
+
+            strong {
+                font-weight: 600;
+            }
+
+            em {
+                color: $accent;
+                font-style: normal;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &-img {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: -90px;
+        left: -90px;
+    }
+
+    form {
+        padding: 28px 0px 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 18px 26px;
+
+        .form-title,
+        .form-button {
+            grid-column-start: span 2;    
+        }
+
+        .form-title {
+            font-weight: 600;
+        }
+
+        .form-button {
+            padding: 28px 0px 0px;
+            text-align: right;
+            button {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.popup-claim {
+    .popup-img {
+        left: -100px;
+    }
+
+    form {
+        .input-item:nth-child(3) {
+            grid-row-start: span 3;
+        }
+    }
+}
+
+.popup-message {
+    .popup-body {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 430px 1fr;
+        overflow: hidden;
+    }
+
+    .popup-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .popup-content {
+        padding: 68px 96px 72px 72px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+
+        .form-button {
+            grid-column-start: 1;
+        }
+    }
+
+
+}
+
+.cookie {
+    padding: 22px 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: $brand;
+    border-radius: 10px 0px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(calc(100% + 30px), 0);
+    transition: opacity .3s linear, transform .3s linear;
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0,0);
+    }
+
+    p {
+        font-weight: 600;
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &-accept {
+        @include font(400);
+        font-size: 14px;
+        background: #fff;
+        padding: 15px 48px;
+        border-radius: 9px;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    span {
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: $text;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+
+        &:first-child {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:last-child {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .popup {
+        &-img {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .popup {
+        overflow-y: scroll;
+        padding: 1% 0px;
+        align-items: start;
+    
+        &-body {
+            width: 98%;
+            padding: 42px 28px 60px;
+        }
+    
+        &-title,
+        h2 {
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+    
+        form {
+            padding: 38px 0px 0px;
+            grid-template-columns: 1fr;
+            grid-gap: 18px;
+    
+            .form-title,
+            .form-button {
+                grid-column-start: 1;    
+            }
+    
+            .form-title {
+                font-weight: 600;
+            }
+    
+            .form-button {
+                padding: 28px 0px 0px;
+                text-align: left;
+            }
+        }
+    }
+
+    .popup-claim {
+        .popup-img {
+            left: -100px;
+        }
+    
+        form {
+            .input-item:nth-child(3) {
+                grid-row-start: 4;
+            }
+        }
+    }
+
+    .popup-excursion {
+        align-items: center;
+    }
+
+    .cookie {
+        padding: 15px 35px 20px;
+        width: 98%;
+        bottom: 1%;
+        left: 50%;
+        border-radius: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        transform: translate(-50%, calc(100% + 30px));
+    
+        &.open {
+            transform: translate(-50%,0);
+        }
+    
+    }
+
+    .popup-message {
+        align-items: center;
+        .popup-body {
+            grid-template-columns: 1fr;
+        }
+    
+        .popup-bg {
+            display: none;
+        }
+    
+        .popup-content {
+            padding: 42px 38px;
+        }
+    
+        form {
+            grid-template-columns: 1fr;
+    
+            .form-button {
+                grid-column-start: 1;
+            }
+        }
+    }
+
+    .close {
+        top: 16px;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+    }
+}

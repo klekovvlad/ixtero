@@ -1,0 +1,21 @@
+@mixin font($weight) {
+    font-family: Inter, sans-serif;
+    font-weight: $weight;
+}
+
+@mixin transition($element, $delay) {
+    transition: $element $delay linear;
+}
+
+@mixin flex-row-spb($gap) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $gap;
+}
+
+@mixin flex-col($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}

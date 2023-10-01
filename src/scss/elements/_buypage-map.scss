@@ -1,0 +1,242 @@
+.buypage-map {
+    padding: 50px 0px;
+
+    .section-titles {
+        padding: 38px 0px 50px;
+        gap: 10px;
+        h1 {
+            strong {
+                color: $brand;
+            }
+        }
+    }
+
+    .office-list {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 44px;
+    }
+
+    .office-item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 14px;
+        @include font(600);
+        font-size: 21px;
+
+        .icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #BF7E1B url('../img/icons/adress-3.svg') no-repeat center;
+            background-size: 16px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        &__accent {
+            .icon {
+                background: $accent url('../img/icons/adress-1.svg') no-repeat center;
+                background-size: 16px 16px;
+            }
+        }
+
+        &__brand {
+            .icon {
+                background: $brand url('../img/icons/adress-2.svg') no-repeat center;
+                background-size: 16px 16px;
+            }
+        }
+    }
+
+    .tooltip {
+        margin: 26px 0px 28px;
+        max-width: max-content;
+
+        &-value {
+            color: $accent;
+            @include font(600);
+            font-size: 18px;
+
+            &::after {
+                border-color: $accent;
+            }
+        }
+    }
+}
+
+#map {
+    height: 540px;
+
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
+}
+
+.map-wrapper {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: $lightbg;
+    height: 540px;
+
+    .map-items {
+        margin: 24px 26px 24px 0px;
+        padding: 0px 26px 0px 34px;
+        max-height: calc(100% - 48px);
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 23px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $scrollbartrack $scrollbar;
+        
+        &::-webkit-scrollbar {
+            width: 5px;
+            background: $scrollbar;
+            border-radius: 5px;
+        }
+
+        &::-ms-track {
+            width: 5px;
+            background: $scrollbar;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $scrollbartrack;
+            border-radius: 5px;
+        }
+
+        &::-ms-thumb {
+            background: $scrollbartrack;
+            border-radius: 5px;
+        }
+    }
+
+    .map-item {
+        font-size: 16px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 15px;
+        @include font(400);
+        color: #2E2E2EA6;
+        text-align: left;
+
+        .icon {
+            flex: 0 0 34px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            &::before {
+                content: '';
+                width: 43px;
+                height: 43px;
+                border-radius: 50%;
+                border: 1px solid transparent;
+                background: transparent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &__shop {
+                background: #BF7E1B url('../img/icons/adress-3.svg') no-repeat center;
+                background-size: 20px 20px;
+            
+
+                &.active {
+                    &::before {
+                        border-color: #BF7E1B;
+                    }
+                }
+            }
+
+            &__partners {
+                background: $brand url('../img/icons/adress-2.svg') no-repeat center;
+                background-size: 20px 20px;;
+
+                &.active {
+                    &::before {
+                        border-color: $brand;
+                    }
+                }
+            }
+
+            &__office {
+                background: $accent url('../img/icons/adress-1.svg') no-repeat center;
+                background-size: 20px 20px;;
+
+                &.active {
+                    &::before {
+                        border-color: $accent;
+                    }
+                }
+            }
+        }
+
+        &.active {
+            color: $accent;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .buypage-map {
+        padding: 36px 0px 25px;
+    
+        .section-titles {
+            padding: 20px 0px 36px;
+            gap: 23px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+    
+        .office-list {
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+
+    
+        .tooltip {
+            margin: 22px 0px 32px;
+        }
+    }
+    
+    #map {
+        height: 390px;
+        grid-row-start: 1;
+    }
+    
+    .map-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        // max-height: calc(390px + 320px + 25px);
+            
+        .map-items {
+            margin: 30px 25px 30px 0px;
+            padding: 0px 24px 0px 24px;
+            max-height: min(calc(100% + 20px), 320px);
+        }
+    }
+}

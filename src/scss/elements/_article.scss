@@ -1,0 +1,137 @@
+.article {
+    padding: 48px 0px 80px;
+
+    p {
+        line-height: 1.75;
+        font-weight: 400;
+        
+        strong {
+            @include font(600);
+        }
+    }
+
+    ul {
+        @include flex-col(8px);
+
+        li {
+            @include font(400);
+            position: relative;
+            padding-left: 23px;
+            line-height: 1.75;
+
+            &::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: $brand;
+                position: absolute;
+                left: 0;
+                top: 14px;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    em {
+        font-style: normal;
+        @include font(500);
+        color: $accent;
+    }
+
+    .wp-block-button__link {
+        font-size: 16px;
+        background: transparent;
+        padding: 0;
+        color: $accent;
+        position: relative;
+        max-width: max-content;
+        @include font(400);
+        padding-right: 32px;
+        &::before,
+        &::after {
+            content: '';
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        &::after {
+            background: url('../img/icons/more-double-square.svg') no-repeat center;
+            background-size: contain;
+            right: 0;
+        }
+
+        &::before {
+            background: url('../img/icons/more-double-square-arrow.svg') no-repeat left;
+            background-size: contain;
+            top: calc(50% + 1px);
+            right: -10px;
+            z-index: 2;
+        }
+    }
+
+    &-top {
+        padding: 50px 0px 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px 72px;
+    }
+
+    &-img {
+        border-radius: 12px;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &-title,
+    &-date {
+        @include font(600);
+    }
+
+    &-titles {
+        @include flex-col(12px);
+    }
+
+    &-date {
+        color: $accent;
+    }
+
+    &-title {
+        font-size: 30px;
+    }
+
+    &-desc {
+        color: #747474;
+    }
+
+    &-content {
+        @include flex-col(16px);
+    }
+}
+
+@media (max-width: 767px) {
+    .article {
+        padding: 36px 0px 62px;
+
+    
+        &-top {
+            padding: 28px 0px 46px;
+            grid-template-columns: 1fr;
+            grid-gap: 28px;
+        }
+    
+        &-img {
+            height: 225px;
+        }
+    
+        &-title {
+            font-size: 20px;
+        }
+    
+    }
+}

@@ -1,0 +1,89 @@
+.input,
+.input-text {
+    padding: 10px 0px;
+    background: transparent;
+    @include font(400);
+    color: $text;
+    font-size: 18px;
+    border: none;
+    width: 100%;
+
+    &::placeholder {
+        @include font(400);
+        color: rgba($color: $text, $alpha: 0.5);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &-item {
+        position: relative;
+        &::before {
+            content: '';
+            width: calc(100% - 14px);
+            height: 1px;
+            background: $text;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        &::after {
+            content: '';
+            width: 13px;
+            height: 13px;
+            border: 1px solid $text;
+            
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translate(0, 50%);
+        }
+    }
+}
+
+.woocommerce-input-wrapper {
+    display: block;
+    position: relative;
+    &::before {
+        content: '';
+        width: calc(100% - 14px);
+        height: 1px;
+        background: $text;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    &::after {
+        content: '';
+        width: 13px;
+        height: 13px;
+        border: 1px solid $text;
+        
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 50%);
+    }
+}
+
+textarea.input {
+    resize: none;
+    max-height: 80px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=submit] {
+    position: relative;
+    font-size: 16px;
+    @include font(400);
+    background: transparent;
+    border: none;
+}

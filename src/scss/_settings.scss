@@ -1,0 +1,91 @@
+body {
+    @include font(300);
+    color: $text;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+a {
+    color: $text;
+}
+
+main {
+    overflow: hidden;
+    min-height: 70vh;
+}
+
+.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+    z-index: 2;
+}
+
+.swiper-pagination-bullet {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: $lightgray;
+
+    &-active {
+        background: $accent;
+    }
+}
+
+.swiper {
+    &-scrollbar {
+        height: 10px;
+        width: 444px;
+        background: rgba($color: $brand, $alpha: 0.12);
+        border-radius: 10px;
+
+        &-drag {
+            cursor: grab;
+            height: 10px;
+            background: $brand;
+            border-radius: 10px;
+            &:active {
+                cursor: grabbing;
+            }
+        }
+    }
+}
+
+button[type=submit] {
+    border: none;
+    background: transparent;
+}
+
+button {
+    @include font(400);
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0px 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 480px;
+        padding: 0px 15px;
+    }
+
+    .swiper {
+        &-scrollbar {
+            width: 100%;
+        }
+    }
+}

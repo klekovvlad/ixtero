@@ -1,0 +1,21 @@
+$text: #191919;
+$darkbg: #2D2D2D;
+$accent: #FF5757;
+$brand: #FFB257;
+$lightbg: #F7F7F7;
+$border: #E0E0E0;
+$lightgray: #EBEBEB;
+$second: #8A8A8A;
+$scrollbar: #EDEDED;
+$scrollbartrack: #B0B0B0;
+
+:root {
+    --plyr-color-main: #FFB257 !important;
+}
+
+$filter-brand: brightness(0) saturate(100%) invert(61%) sepia(84%) saturate(338%) hue-rotate(344deg) brightness(107%) contrast(101%);
+$filter-accent: brightness(0) saturate(100%) invert(62%) sepia(42%) saturate(7460%) hue-rotate(328deg) brightness(102%) contrast(101%);
+$filter-text: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(1248%) hue-rotate(332deg) brightness(100%) contrast(80%);
+$filter-white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7478%) hue-rotate(45deg) brightness(102%) contrast(104%);
+
+$shadow-box: 0px 8px 18px 0px #00000000;

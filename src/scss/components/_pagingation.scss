@@ -1,0 +1,117 @@
+.pagingation-number {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    .swiper-pagination-bullet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid $brand;
+        font-size: 18px;
+        line-height: 1;
+        @include font(500);
+        color: $brand;
+
+        &-active {
+            background: $brand;
+            color: $text;
+        }
+    }
+}
+
+.pagination-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+
+    .swiper-pagination-bullet {
+        width: 34px;
+        height: 34px;
+        border: 1px solid $accent;
+        border-radius: 50%;
+        background: transparent;
+        position: relative;
+
+        &-active {
+
+            &::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: $accent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.pagination-category,
+.woocommerce-pagination {
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .page-numbers,
+    .page-link {
+        width: 42px;
+        height: 42px;
+        background: $lightbg;
+        border-radius: 50%;
+        @include font(700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.current {
+            background: transparent;
+            border: 1px solid $brand;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: $brand;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .pagination-circle {
+        gap: 8px;
+    
+        .swiper-pagination-bullet {
+            width: 26px;
+            height: 26px;
+                
+            &-active {
+    
+                &::before {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}

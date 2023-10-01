@@ -1,0 +1,238 @@
+.homepage-advproducts {
+    overflow: hidden;
+    background: $lightbg url('../img/homepage-advproducts-bg.webp') no-repeat 100% 140px;
+
+    .advproducts {
+        &-wrapper {
+            position: relative;
+            padding: 54px 0px 0px;
+
+            .shild {
+                right: 0;
+                bottom: 100px;
+                transform: rotate(-3deg);
+                &::before {
+                    transform: translate(0%, calc(-100% - 20px)) rotate(3deg);
+                }
+            }
+        }
+
+        &-item {
+            max-width: calc(878px / 1200px * 100%);
+            &:first-child,
+            &:nth-child(2) {
+                max-width: calc(620px / 1200px * 100%);
+            }
+
+        }
+
+        &-slider {
+            .swiper-wrapper {
+                padding: 114px 0px 130px;
+            }
+        }
+
+        &-slide {
+            .icon {
+                width: 118px;
+                height: 118px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+                box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.04);
+                border-radius: 50%;
+
+                &-img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+
+            .title {
+                @include font(600);
+                margin: 26px 0px 14px;
+            }
+
+            .desc {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+    }
+}
+
+@media (max-width: 1200px) {
+    .homepage-advproducts {
+        background: $lightbg url('../img/homepage-advproducts-bg.webp') no-repeat 100% 140px;
+        background-size: 400px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .homepage-advproducts {
+        padding-top: 160px;
+        background: $lightbg;
+
+        .advproducts {
+
+            &-wrapper {
+                .shild {
+                    right: 0;
+                    bottom: 100%;
+                    transform: translate(0, calc(-100% - 20px)) rotate(-3deg);
+                    &::before {
+                        transform: translate(0%, calc(100% + 40px)) rotate(3deg) scale(1, -1);
+                    }
+                }
+            }
+
+            &-item {
+                max-width: 100%;
+                &:first-child,
+                &:nth-child(2) {
+                    max-width: 100%;
+                }
+    
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-advproducts {
+        padding: 50px 0px 0px;
+        overflow: visible;
+
+        h2 {
+            strong {
+                display: block;
+            }
+        }
+
+        .swiper {
+            overflow: hidden;
+
+        }
+
+
+        .advproducts {
+
+            &-wrapper {
+                .swiper-wrapper {
+                    padding-bottom: 50px;
+                }
+
+                .swiper-scrollbar {
+                    background: rgba($color: $accent, $alpha: 0.12);
+                    &-drag {
+                        background: $accent;
+                    }
+                }
+
+                .shild {
+                    right: -10px;
+                    bottom: 100%;
+                    transform: translate(0, calc(-100% - 20px)) rotate(-3deg);
+                    &::before {
+                        left: 50%;
+                        transform: translate(100%, calc(100% + 40px)) rotate(3deg) scale(1, -1);
+                    }
+                }
+            }
+
+            &-item {
+                max-width: 100%;
+                &:first-child,
+                &:nth-child(2) {
+                    max-width: 100%;
+                }
+    
+            }
+
+            &-slider {
+                position: relative;
+                width: 100vw;
+                position: relative;
+                left: -15px;
+
+
+                .swiper-wrapper {
+                    position: relative;
+                    padding-bottom: 100px;
+                }
+
+                .swiper-scrollbar {
+                    display: none;
+                }
+            }
+
+            &-slide {
+                margin: 0px 10px;
+                width: 67px;
+                position: relative;
+                transform: translate(0, 0px);
+                transition: transform .3s linear;
+                transform: translate(0px, -20px);
+                .icon {
+                    width: 67px;
+                    height: 67px;
+                    margin: 0px auto;
+                    transition: transform .3s linear;
+                    &-img {
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+
+                &:first-child {
+                    &.swiper-slide-active {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+                .info {
+                    width: calc(100vw - 30px);
+                    opacity: 0;
+                    visibility: hidden;
+                    text-align: center;
+                    padding: 22px 15px 0px 15px;
+                }
+                
+                &.swiper-slide {
+                    &-active {
+                        transform: translate(0px, 0px);
+                        .icon {
+                            transform: scale(1.76);
+                        }
+
+                        .info {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translate(calc(-50% + 30px), 0);
+                        }
+                    } 
+                    &-prev {
+                        position: relative;
+                        left: -20px;
+                        margin-left: 20px;
+                        transform: translate(0px, 0px);
+                    }
+                    &-next {
+                        position: relative;
+                        right: -20px;
+                        margin-right: 20px;
+                        transform: translate(0px, 0px);
+                    }
+                }
+            }
+        }
+    }
+}

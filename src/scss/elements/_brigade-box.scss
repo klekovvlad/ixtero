@@ -1,0 +1,302 @@
+.brigade {
+    &-items {
+        @include flex-col(34px);
+    }
+
+    &-item {
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0px 9px 26px rgba(0, 0, 0, 0.07);
+        padding: 34px 66px 56px;
+        position: relative;
+
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        &-img {
+            flex: 0 0 162px;
+            width: 162px;
+            height: 162px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &-name {
+            .title {
+                font-size: 30px;
+                @include font(700);
+            }
+
+            .city {
+                @include font(600);
+                color: $accent;
+            }
+        }
+
+        &-desc {
+            .desc-open {
+                display: none;
+            }
+
+            .desc {
+                line-height: 1.75;
+            }
+        }
+
+        &-services {
+            padding: 18px 0px 30px;
+
+            .title {
+                font-size: 18px;
+                @include font(600);
+                margin-bottom: 16px;
+            }
+
+            .services {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 10px;
+            }
+
+            .servise-item {
+                color: $accent;
+                border: 1px solid $accent;
+                border-radius: 33px;
+                padding: 11px 22px;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            .tags {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 18px;
+            }
+
+            .tag {
+                font-size: 18px;
+                @include font(600);
+                color: #B8B8B8;
+            }
+        }
+
+        .brigade-call {
+            @include font(400);
+            font-size: 16px;
+            background: transparent;
+        }
+    }
+
+    &-contacts {
+        padding: 43px 67px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 40px;
+        position: absolute;
+        right: 66px;
+        bottom: 100px;
+        width: min(80%, 901px);
+        background: #FFFFFF;
+        box-shadow: 0px 10px 17px rgba(0, 0, 0, 0.07);
+        border-radius: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 50px);
+        transition: opacity .3s linear, transform .3s linear;
+        z-index: 3;
+
+        &.open {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(0,0);
+        }
+
+        .contact-img {
+            flex: 0 0 162px;
+            width: 162px;
+            height: 162px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .city {
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: $accent;
+        }
+
+        .phone {
+            padding: 0;
+            &::before {
+                display: none;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 767px) {
+    .brigade {
+        &-items {
+            gap: 14px;
+        }
+    
+        &-item {
+            padding: 24px 24px 32px;
+    
+            &-top {
+                gap: 17px;
+                margin-bottom: 18px;
+            }
+
+            &-img {
+                flex: 0 0 90px;
+                width: 90px;
+                height: 90px;
+            }
+    
+            &-name {
+                .title {
+                    font-size: 18px;
+                }
+    
+                .city {
+                    font-size: 14px;
+                }
+            }
+    
+            &-desc {
+                &.open {
+                    .desc-open {
+                        &::after {
+                            border: 2px solid $text;
+                            border-bottom: 2px solid transparent;
+                            border-left: 2px solid transparent;
+                            transform: translate(24px, 10px) rotate(-45deg);
+                        }
+                    }
+
+                    .desc {
+                        display: block;
+                    }
+                }
+
+                .desc-open {
+                    display: block;
+                    background: transparent;
+                    color: $text;
+                    @include font(600);
+                    font-size: 16px;
+                    position: relative;
+                    max-width: max-content;
+                    opacity: 0.7;
+
+                    &::after {
+                        content: '';
+                        width: 6px;
+                        height: 6px;
+                        border: 2px solid $text;
+                        border-top: 2px solid transparent;
+                        border-right: 2px solid transparent;
+                        transform-origin: bottom left;
+                        transform: translate(24px, 4px) rotate(-45deg);
+                        position: absolute;
+                        top: 0%;
+                        right: 0;
+                    }
+                }
+    
+                .desc {
+                    padding-top: 10px;
+                    display: none;
+                }
+            }
+    
+            &-services {
+                padding: 6px 0px 15px;
+    
+                .title {
+                    margin-bottom: 10px;
+                }
+    
+                .services {
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 4px;
+                }
+    
+                .servise-item {
+                    padding: 7px 22px;
+                }
+            }
+    
+            &-bottom {
+                flex-direction: column;
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                gap: 16px;
+    
+                .tags {
+                    gap: 12px;
+                }
+    
+                .tag {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &-contacts {
+            padding: 24px 32px;
+            gap: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 70px;
+            width: 95%;
+            border-radius: 10px;
+    
+            .contact-img {
+                display: none;
+            }
+    
+            .title {
+                font-weight: 700;
+                font-size: 20px;
+            }
+    
+            .city {
+                font-weight: 600;
+                margin-bottom: 18px;
+                color: $accent;
+            }
+    
+            .phone {
+                padding: 0;
+                &::before {
+                    display: none;
+                }
+            }
+    
+        }
+    }
+}

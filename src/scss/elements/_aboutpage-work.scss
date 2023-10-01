@@ -1,0 +1,288 @@
+.aboutpage-work {
+    padding: 114px 0px 224px;
+
+    .section-titles {
+        h2 {
+            strong {
+                color: $brand;
+            }
+        }
+    }
+
+    .work {
+        &-slider {
+            padding: 86px 0px 0px;
+        }
+
+        &-slide {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 130px;
+        }
+
+        &-img {
+            flex: 0 0 254px;
+            border: 1px solid $brand;
+            border-radius: 50%;
+            width: 254px;
+            height: 254px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            img {
+                width: 167px;
+                height: 167px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+
+        &-num {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            line-height: 1;
+            background: $brand;
+            right: 0;
+            top: 50%;
+            @include font(600);
+            transform: translate(50%, -50%);
+        }
+
+        &-desc {
+            line-height: 1.75;
+            position: relative;
+            strong {
+                @include font(500);
+            }
+
+            &::before {
+                content: '';
+                height: 1px;
+                width: 56px;
+                border-bottom: 1px dashed $brand;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(calc(-100% - 33px), -50%);
+            }
+        }
+    }
+
+    .pagingation-number {
+        padding: 30px 0px 0px calc(254px + 130px);
+    }
+
+    .work-worlds {
+        position: relative;
+        padding: 156px 0px 0px;
+
+        .shild {
+            right: 80px;
+            top: 0;
+            max-width: 300px;
+            transform: rotate(-6deg);
+
+            &::before {
+                top: 80%;
+                left: 0;
+                transform: translate(calc(-100% - 15px), -50%) rotate(-88deg);
+            }
+        }
+    }
+
+    .worker {
+        &-box {
+            overflow: hidden;
+            border-radius: 20px;
+            background: $lightbg;
+            box-shadow: 0px 8px 18px 0px #00000000;
+            display: grid;
+            grid-template-columns: 42.5% 1fr;
+            align-items: center;
+        }
+
+        &-img {
+           height: 480px;
+           width: 100%;
+           object-fit: cover;
+           object-position: 50% 40%;
+        }
+
+        &-content {
+            padding: 58px 64px 80px 92px;
+        }
+
+        &-name {
+            font-size: 40px;
+            @include font(700);
+            margin-bottom: 8px;
+        }
+
+        &-post {
+            font-size: 18px;
+            color: $accent;
+            @include font(500);
+            margin-bottom: 30px;
+        }
+
+        &-text {
+            color: #616161;
+            line-height: 1.75;
+            font-weight: 500;
+            font-family: Lora, sans;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .aboutpage-work {
+    
+        .worker {
+            &-box {
+                grid-template-columns: 1fr;
+            }
+
+            &-img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .aboutpage-work {
+        padding: 70px 0px;
+    
+        .work {
+            &-slider {
+                padding: 76px 0px 0px;
+                position: relative;
+                width: 100vw;
+                left: -15px;
+            }
+    
+            &-slide {
+                flex-direction: column;
+                justify-content: center;
+                gap: 60px;
+                width: 105px;
+
+                &.swiper-slide-active {
+                    .work {
+                        &-img {
+                            transform: scale(1.52);
+                        }
+
+                        &-num {
+                            width: 21px;
+                            height: 21px;
+                            font-size: 10.5px;
+                            line-height: 1.5;
+                        }
+
+                        &-desc {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+
+                &.swiper-slide-prev,
+                &.swiper-slide-next {
+                    position: relative;
+                }
+
+                &.swiper-slide-prev {
+                    right: 25px;
+                    margin-left: 25px;
+                }
+
+                &.swiper-slide-next {
+                    left: 25px;
+                    margin-right: 25px !important;
+                }
+            }
+    
+            &-img {
+                flex: 0 0 105px;
+                width: 105px;
+                height: 105px;
+                transition: transform .5s linear;
+    
+                img {
+                    width: 68px;
+                    height: 68px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                }
+            }
+    
+            &-num {
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%, -50%);
+            }
+    
+            &-desc {
+                width: calc(100vw - 30px);
+                opacity: 0;
+                visibility: hidden;
+                text-align: center;
+    
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    
+        .pagingation-number {
+            justify-content: center;
+            padding: 30px 0px 0px 0;
+            margin: 0px auto;
+        }
+    
+        .work-worlds {
+            padding: 145px 0px 0px;
+    
+            .shild {
+                right: 0px;
+                top: 15px;
+                max-width: 240px;
+                font-size: 14px;
+            }
+        }
+    
+        .worker {
+            &-img {
+                height: 320px;
+                object-position: 50% 35%;
+            }
+
+            &-content {
+                padding: 35px 22px 56px 22px;
+            }
+    
+            &-name {
+                font-size: 30px;
+            }
+    
+            &-post {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

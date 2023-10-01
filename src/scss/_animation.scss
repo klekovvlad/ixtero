@@ -1,0 +1,25 @@
+.animation {
+    transition: transform .7s linear, opacity .7s linear;
+
+    &-left {
+        transform: translate(-100px);
+        opacity: 0;
+    }
+
+    &-right {
+        transform: translate(100px);
+        opacity: 0;
+    }
+
+    &-top {
+        transform: translate(0, 50px);
+        opacity: 0;
+    }
+
+    &-shape {
+        transform: rotate(10deg);
+        transform-origin: bottom center;
+    }
+
+}
+

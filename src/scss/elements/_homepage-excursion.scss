@@ -1,0 +1,112 @@
+.homepage-excursion {
+    padding: 188px 0px;
+    background: url('../img/homepage-excurcsion-bg.webp') no-repeat center;
+    background-size: cover;
+
+    .excursion {
+        &-box {
+            padding: 65px 65px 74px;
+        }
+
+        &-img {
+            position: absolute;
+            width: 300px;
+            height: 241px;
+            object-fit: contain;
+            object-position: center;
+            right: 94px;
+            top: -56px;
+        }
+    }
+
+    .subtitle {
+        position: relative;
+        max-width: max-content;
+        &::after {
+            content: '';
+            width: 513px;
+            height: 100px;
+            background: url('../img/homepage-excursion-box-line.svg') no-repeat center left;
+            background-size: contain;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            transform: translate(100%, -50%);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .homepage-excursion {
+        .excursion {
+            &-box {
+                padding: 65px 400px 74px 65px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .homepage-excursion {
+   
+        .excursion {
+            &-box {
+                padding: 65px 65px 74px;
+                overflow: hidden;
+            }
+    
+            &-img {
+                position: relative;
+                right: 0px;
+                top: 0px;
+            }
+        }
+    
+        .subtitle {
+            position: relative;
+            max-width: max-content;
+            &::after {
+                width: 77px;
+                height: 210px;
+                background: url('../img/homepage-excursion-box-line-2.svg') no-repeat center left;
+                background-size: contain;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(calc(100% + 30px), 0%);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-excursion {
+        height: 330px;
+        padding: 0;
+        margin-bottom: 400px;
+        position: relative;
+
+        .excursion {
+            &-box {
+                position: absolute;
+                top: 230px;
+                left: 15px;
+                right: 15px;
+                padding: 32px 32px;
+            }
+    
+            &-img {
+                height: 157px;
+                width: 196px;
+            }
+        }
+    
+        .subtitle {
+            &::after {
+                top: 0%;
+                transform: translate(calc(100% - 80px), 0%);
+            }
+            padding-right: 80px;
+        }
+    }
+}

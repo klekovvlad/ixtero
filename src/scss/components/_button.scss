@@ -1,0 +1,48 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 179px;
+    height: 48px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    @include font(500);
+    border-radius: 9px;
+
+    &-accent {
+        background: $accent;
+    }
+
+    &-brand {
+        background: $brand;
+    }
+}
+
+.hidden-btn {
+    color: $text;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    @include font(600);
+    position: relative;
+    padding-right: 17px;
+
+    &::after {
+        content: '';
+        width: 10px;
+        height: 6px;
+        background: url('../img/icons/showhide.svg') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &__close {
+        &::after {
+            transform: translate(0, -50%) rotate(180deg);
+        }
+    }
+}

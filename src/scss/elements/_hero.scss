@@ -1,0 +1,148 @@
+.hero {
+    background: $lightbg;
+    position: relative;
+
+    &-wrapper {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 80px;
+        overflow: hidden;
+        padding: 100px 0px 66px;
+        height: 560px;
+        position: relative;
+    }
+
+    h1 {
+        padding-top: 30px;
+        font-size: 40px;
+        @include font(600);
+        width: 670px;
+        margin-bottom: 34px;
+        strong {
+            color: $accent;
+        }
+    }
+
+    &-img {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 66px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        &-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        &-wrapper {
+            gap: 80px;
+            overflow: hidden;
+            padding: 100px 0px 66px;
+            height: 560px;
+            position: relative;
+        }
+    
+        h1 {
+            font-size: 36px;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .hero {
+        &-wrapper {
+            flex-direction: column;
+            gap: 0px;
+            padding: 50px 0px;
+        }
+    
+        h1 {
+            padding-top: 30px;
+        }
+    
+        &-img {
+            top: 100%;
+            right: 0;
+            transform: translate(0, -100%);
+            max-width: 400px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 200px;
+            background: #fff;
+        }
+    
+        &-wrapper {
+            flex-direction: column-reverse;
+            gap: 24px;
+            padding: 44px 0px 110px;
+            height: 100%;
+            text-align: center;
+        }
+
+        &-text {
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        h1 {
+            margin: 0px auto;
+            padding-top: 0px;
+            font-size: 26px;
+            width: 100%;
+            margin-bottom: 17px;
+            br {
+                display: none;
+            }
+        }
+        
+        picture {
+            margin: 0px auto;
+        }
+
+        &-img {
+            position: relative;
+            top: 0%;
+            right: 0;
+            transform: translate(0, 0%);
+            margin: 0px auto;
+            object-fit: contain;
+            object-position: center;
+            height: 300px;
+            width: 100%;
+        }
+    
+        .swiper-pagination {
+            left: 50%;
+            bottom: 42px;
+            justify-content: center;
+            gap: 12px;
+            transform: translate(-50%, 0px);
+        }
+    }
+}

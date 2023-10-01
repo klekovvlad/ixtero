@@ -1,0 +1,18 @@
+.download-link {
+    padding-left: 27px;
+    @include font(600);
+    color: $accent;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background: url('../img/icons/download.svg') no-repeat center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}

@@ -1,0 +1,16 @@
+.designpage-steps {
+    background: #fff;
+    .steps {
+        &-wrapper {
+            display: block;
+        }
+
+        &-items {
+            margin-bottom: 130px;
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

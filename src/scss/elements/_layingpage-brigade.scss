@@ -1,0 +1,77 @@
+.layingpage-brigade {
+
+    .section-titles {
+        margin-bottom: 60px;
+    }
+
+    .brigade {
+        &-advantage {
+            margin-bottom: 100px;
+        }
+
+        &-dark {
+            margin-bottom: 100px;
+        }
+    }
+
+    .more-doublesquare__black {
+        display: block;
+        margin: 50px auto 0;
+
+        font-size: 24px;
+        padding-right: 42px;
+
+        &::before,
+        &::after {
+            width: 32px;
+            height: 32px;
+        }
+
+        &::before {
+            right: -13px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .layingpage-brigade {
+    
+        .section-titles {
+            margin-bottom: 30px;
+        }
+    
+        .brigade {
+            &-advantage {
+                margin-bottom: 70px;
+                .title {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+    
+            &-dark {
+                margin-bottom: 70px;
+                .title {
+                    max-width: 80%;
+                }
+            }
+        }
+
+        .more-doublesquare__black {
+   
+            font-size: 18px;
+            padding-right: 32px;
+    
+            &::before,
+            &::after {
+                width: 22px;
+                height: 22px;
+            }
+    
+            &::before {
+                right: -10px;
+            }
+        }
+    }
+}

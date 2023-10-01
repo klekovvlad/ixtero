@@ -1,0 +1,106 @@
+.homepage-advantage {
+    overflow: hidden;
+
+    .swiper {   
+        &-wrapper {
+            align-items: stretch;
+        }
+        &-slide {
+            height: auto;
+        }
+    }
+
+    .advantage {
+        &-block {
+            .swiper {
+                &-pagination {
+                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 94px;
+                    transform: translate(-50%, 0%);
+                }
+            }
+        }
+
+        &-wrapper {
+            padding: 86px 0px 140px;
+            gap: 60px 0px;
+        }
+
+        &-slider {
+            overflow: visible;
+
+            .swiper {
+                &-wrapper {
+                    padding: 0px 0px 112px;
+                    gap: 20px 0px;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .homepage-advantage {
+    
+        .advantage {
+            &-block {
+                .swiper {
+                    &-pagination {
+                        display: flex;
+                    }
+                }
+            }
+    
+            &-wrapper {
+                padding: 86px 0px 140px;
+                gap: 60px 0px;
+            }
+    
+            &-slider {
+                overflow: visible;
+    
+                .swiper {
+                    &-wrapper {
+                        padding: 0px 0px 112px;
+                        gap: 20px 0px;
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-advantage {
+    
+        .advantage {
+    
+            &-wrapper {
+                padding: 48px 0px 130px;
+                gap: 0px;
+            }
+    
+            &-slider {    
+                .swiper {
+                    &-wrapper {
+                        padding: 0px 0px 36px;
+                        gap: 0px 0px;
+                    }
+                }
+    
+            }
+
+            &-slide {
+                .desc {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

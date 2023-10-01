@@ -1,0 +1,49 @@
+@media (max-width: 767px) {
+    .publications {
+        &.newspage {
+    
+            .articles {
+                
+    
+        
+        
+                &-item {
+                    height: 245px;
+                    background: $lightbg;
+                    flex-direction: column;
+                    &:first-child {
+                        grid-column-start: 1;
+                    }
+                    &:last-child {
+                        display: block;
+                    }
+                    .articles {
+                        &-img {
+                            flex: 0 0 104px;
+                            height: 104px;
+                            width: 100%;
+                        }
+                        &-info {
+                            height: 100%;
+                            padding: 12px 10px 20px;
+                        }
+    
+                        &-date {
+                            font-size: 12px;
+                        }
+    
+                        &-title {
+                            font-weight: 300;
+                            font-size: 14px;
+                        }
+                    }
+    
+                    
+                }
+    
+            }
+        
+        }
+    }
+
+}

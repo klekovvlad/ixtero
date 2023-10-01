@@ -1,0 +1,156 @@
+.gallerypage {
+
+    &-nav {
+        margin-bottom: 50px;
+    }
+
+    &-imgs {
+        overflow: hidden;
+    }
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        padding: 60px 0px 0px 0px;
+    }
+
+    &-info {
+        .title {
+            font-size: 18px;
+            @include font(600);
+        }
+
+        .city {
+            color: $brand;
+            font-weight: 400;
+            margin: 10px 0px 20px;
+        }
+
+        .desc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            line-height: 1.75;
+
+            .strong {
+                @include font(600);
+            }
+        }
+    }
+
+    &-img {
+        border-radius: 20px;
+    }
+
+    &-thumbs {
+        margin-top: 15px;
+    }
+
+    &-thumb {
+        border-radius: 8px;
+        height: 88px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .swiper {
+        &-wrapper {
+            position: relative;
+        }
+
+        &-prev,
+        &-next {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: $brand url('../img/icons/sliderarrow.svg') no-repeat center;
+            background-size: 8px 16px;
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+
+            &::before {
+                content: '';
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 1px solid $brand;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &-prev {
+            left: 20px;
+            transform: translate(0, -50%);
+        }
+
+        &-next {
+            left: calc(100% - 65px);
+            transform: translate(0, -50%) rotate(180deg);
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    .gallerypage {
+
+        &-wrapper {
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            padding: 20px 0px 0px 0px;
+        }
+    
+        &-info {
+            grid-row-start: 1;
+            .city {
+                margin: 6px 0px 16px;
+            }
+        }
+    
+        &-img {
+            border-radius: 10px;
+        }
+    
+        &-thumbs {
+            margin-top: 10px;
+        }
+    
+        &-thumb {
+            border-radius: 4px;
+            height: 62px;
+        }
+    
+        .swiper {
+    
+            &-prev,
+            &-next {
+                width: 35px;
+                height: 35px;
+                background: rgba($color: #fff, $alpha: 0.45) url('../img/icons/sliderarrow.svg') no-repeat center;
+                background-size: 5px 160px;
+                top: 50%;
+                z-index: 2;
+    
+                &::before {
+                    display: none;
+                }
+            }
+    
+            &-prev {
+                left: 12px;
+                transform: translate(0, -50%);
+            }
+    
+            &-next {
+                left: calc(100% - 47px);
+                transform: translate(0, -50%) rotate(180deg);
+            }
+        }
+    
+    }
+}

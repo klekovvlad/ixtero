@@ -1,0 +1,162 @@
+.shoppage {
+    padding: 48px 0px 108px;
+
+    .categorys {
+        overflow: hidden;
+
+        .categorypage-nav {
+            padding: 0;
+        }
+    }
+
+    &-wrapper {
+        
+        display: grid;
+        align-items: start;
+        grid-template-columns: 280px 1fr;
+        grid-gap: 42px 35px;
+    }
+
+    &-content {
+        @include flex-col(32px);
+    }
+
+    .section-titles {
+        padding: 40px 0px 42px 0px;
+        strong {
+            color: $brand;
+        }
+    }
+
+    ul.products {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
+
+    &-sales {
+        overflow: hidden;
+        grid-column-start: span 2;
+        background: $lightbg;
+        border-radius: 12px;
+        position: relative;
+        padding: 68px 32px 58px;
+        @include flex-col(15px);
+        justify-content: space-between;
+
+        .title,
+        .subtitle,
+        a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title {
+            @include font(600);
+            h2 {
+                font-size: 30px;
+
+                strong {
+                    color: $accent;
+                }
+            }
+        }
+
+        .subtitle {
+            margin-bottom: auto;
+        }
+
+        .sales-img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            pointer-events: none;
+        }
+    }
+
+    .page-description,
+    .term-description {
+        line-height: 1.75;
+    }
+}
+
+@media (max-width: 767px) {
+    .shoppage {
+        padding: 36px 0px 70px;
+
+        .categorys {
+            max-width: calc(100vw - 30px);
+        }
+    
+        &-wrapper {
+            display: grid;
+            align-items: start;
+            grid-template-columns: 1fr;
+            grid-gap: 0px;
+            position: relative;
+        }
+
+        &-content {
+            padding: 28px 0px 0px;
+        }
+    
+        &-titles {
+            margin-bottom: 24px;
+        }
+    
+        .section-titles {
+            padding: 14px 0px 0px 0px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+    
+        ul.products {
+            padding: 24px 0px 0px 0px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5px;
+        }
+
+        &-sales {
+            height: 225px;
+            padding: 26px 24px 40px;
+            grid-gap: 10px;
+    
+            .title {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+    
+            .subtitle {
+                font-size: 14px;
+            }
+    
+            .sales-img {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+                height: 100%;
+                width: 80%;
+                object-fit: contain;
+                object-position: right bottom;
+            }
+        }
+    
+        .page-description,
+        .term-description {
+            padding: 70px 0px 0px;
+            color: #7D7D7D;
+            p {
+                font-style: italic;
+            }
+            grid-column-start: 1;
+        }
+
+        .woocommerce-pagination {
+            padding-top: 30px;
+        }
+    }
+}

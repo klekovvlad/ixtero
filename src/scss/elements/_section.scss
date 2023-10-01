@@ -1,0 +1,40 @@
+.section {
+    padding: 100px 0px;
+
+    &-titles {
+        @include flex-col(15px);
+
+        h1,h2,h3,h4 {
+            @include font(700);
+            font-size: 40px;
+            line-height: 1.25;
+            strong {
+                color: $accent;
+            }
+        }
+
+        .subtitle,
+        p {
+            @include font(400);
+            line-height: 1.75;
+            strong {
+                @include font(600);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 70px 0px;
+
+        &-titles {
+            gap: 13px;
+    
+            h2 {
+                font-size: 30px;
+            }
+
+        }
+    }
+}

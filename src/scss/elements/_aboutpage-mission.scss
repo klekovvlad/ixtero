@@ -1,0 +1,110 @@
+.aboutpage-mission {
+    padding: 100px 0px 0px;
+
+    .section-titles {
+        p {
+            color: $accent;
+            @include font(600);
+        }
+    }
+
+    .mission {
+        &-wrapper {
+            padding: 80px 0px 230px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            grid-auto-flow: column;
+            grid-gap: 38px 108px;
+        }
+
+        &-item {
+            @include flex-col(24px);
+
+            p {
+                em {
+                    font-style: normal;
+                    @include font(500);
+                    color: $accent;
+                }
+            }
+
+            &:nth-child(3) {
+                grid-row-start: span 2;
+            }
+        }
+
+        &-img {
+            position: absolute;
+            bottom: -50px;
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .aboutpage-mission {
+    
+        .mission {
+            &-wrapper {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-auto-flow: row;
+                grid-gap: 38px 108px;
+            }
+    
+            &-item {   
+                &:nth-child(3) {
+                    grid-row-start: 3;
+
+                    p:last-child {
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .aboutpage-mission {
+        padding: 70px 0px 0px;
+    
+        .mission {
+            &-wrapper {
+                padding: 35px 0px 70px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-auto-flow: row;
+                grid-gap: 20px;
+            }
+    
+            &-item {
+                @include flex-col(24px);
+    
+                p {
+                    em {
+                        font-style: normal;
+                        @include font(500);
+                        color: $accent;
+                    }
+                }
+    
+                &:nth-child(3) {
+                    p:last-child {
+                        max-width: 75%;
+                        position: relative;
+                        left: -33px;
+                    }
+                }
+            }
+    
+            &-img {
+                max-width: 144px;
+                bottom: 110px;
+                right: -15px;
+            }
+        }
+    }
+}

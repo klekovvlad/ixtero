@@ -1,0 +1,379 @@
+.faqpage {
+
+    &-titles {
+        padding: 48px 0px;
+
+        .section-titles {
+            padding: 38px 0px 0px;
+        }
+    }
+
+    &-content {
+        padding: 0px 0px 100px 0px;
+    }
+
+    &-items {
+        max-width: 920px;
+    }
+
+    .faq-item {
+        position: relative;
+        border-bottom: 1px solid $border;
+        padding-bottom: 22px;
+        overflow: hidden;
+
+        .question {
+            padding: 22px 62px 0px 0px;
+            font-size: 20px;
+            @include font(500);
+            position: relative;
+            cursor: pointer;
+            transition: padding-bottom .5s linear;
+            background: #fff;
+
+            &::before,
+            &::after {
+                content: '';
+                background: $accent;
+                position: absolute;
+                transition: transform .3s linear;
+            }
+
+            &::before {
+                width: 30px;
+                height: 1px;
+                top: calc(22px + 12.5px);
+                right: 0;
+                transform: translate(0,-50%);
+            }
+
+            &::after {
+                height: 30px;
+                width: 1px;
+                top: calc(22px + 12.5px);
+                right: 15px;
+                transform: translate(50%, -50%);
+            }
+        }
+
+        .answer {
+            padding: 15px 0px 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            gap: 22px;
+            line-height: 1.75;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform-origin: top;
+            transition: opacity .3s .3s linear;
+
+            ul {
+                @include flex-col(8px);
+
+                li {
+                    @include font(400);
+                    position: relative;
+                    padding-left: 23px;
+
+                    &::before {
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: $brand;
+                        position: absolute;
+                        left: 0;
+                        top: 14px;
+                        transform: translate(0, -50%);
+                    }
+                }
+            }
+
+            a {
+                color: $accent;
+                position: relative;
+                max-width: max-content;
+                @include font(400);
+                &::after {
+                    content: '';
+                    width: 22px;
+                    height: 22px;
+                    display: inline-block;
+                    position: relative;
+                    background: url('../img/icons/link-arrow-orange.svg') no-repeat center;
+                    background-size: contain;
+                    left: 10px;
+                    top: 16px;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            em {
+                font-style: normal;
+                @include font(500);
+                color: $accent;
+            }
+        }
+
+        &.open {
+            .question {
+                &::before {
+                    transform: translate(0,-50%) rotate(-180deg);
+                }
+                &::after {
+                    transform: translate(50%, -50%) rotate(-90deg);
+                }
+            }
+            .answer {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &-form {
+        .form {
+            &-wrapper {
+                padding: 0px 0px 80px 0px;
+                display: grid;
+                grid-template-columns: 50% 1fr;
+                grid-gap: 60px;
+            }
+
+            &-content {
+                background-size: contain;
+                background-position: bottom left;
+                background-repeat: no-repeat;
+
+                .title {
+                    color: $accent;
+                    @include font(700);
+                    font-size: 30px;
+                    padding-left: 250px;
+                    margin-bottom: 20px;
+                }
+
+                .desc {
+                    @include font(600);
+                    line-height: 1.75;
+                    padding-left: 340px;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        width: 70px;
+                        height: 1px;
+                        border-bottom: 1px dashed $accent;
+                        position: absolute;
+                        left: 250px;
+                        top: 14px;
+                        transform: translate(0, -50%);
+                    }
+                }
+            }
+
+            &-items {
+                box-shadow: 0px 8px 18px 0px #00000000;
+                background: $lightbg;
+                border-radius: 20px;
+                padding: 65px 70px 70px;
+                position: relative;
+
+                &::before {
+                    content: '';
+                    width: 50px;
+                    height: 50px;
+                    background: $lightbg;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 20%;
+                    left: 0;
+                    z-index: -1;
+                    transform: translate(calc(-50% + 10px), 0px) rotate(-45deg);
+                }
+
+
+                form {
+                    @include flex-col(16px);
+                }
+            
+                .wpcf7-list-item {
+                    margin: 0;
+                }
+            
+                .form-item {
+                    width: 100%;
+                    padding: 22px 0px 0px;
+                    display: flex;
+                    align-items: end;
+                    justify-content: space-between;
+            
+                    label {
+                        cursor: pointer;
+                        position: relative;
+                        padding-left: 25px;
+                        display: block;
+                        &::before {
+                            content: '';
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 4px;
+                            border: 2px solid $text;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translate(0, -50%);
+                        }
+                    }
+            
+                    input:checked ~ label {
+                        &::before {
+                            background: $text url('../img/icons/checkbox-ok.svg') no-repeat center;
+                            background-size: 60% 60%;
+                        }
+                    }
+            
+                    button[type=submit] {
+                        font-size: 16px;
+                    }
+                 }
+            }
+        }
+    }
+}   
+
+
+@media(max-width: 767px) {
+    .faqpage {
+
+        &-titles {
+            padding: 36px 0px;
+    
+            .section-titles {
+                padding: 20px 0px 0px;
+            }
+        }
+    
+        &-content {
+            padding: 0px 0px 10px 0px;
+        }
+    
+        &-items {
+            max-width: 100%;
+        }
+    
+        .faq-item {
+            padding-bottom: 16px;
+    
+            .question {
+                padding: 16px 36px 0px 0px;
+                font-size: 16px;
+                line-height: 1.75;
+    
+                &::before {
+                    width: 20px;
+                    top: calc(16px + 14px);
+                }
+    
+                &::after {
+                    height: 20px;
+                    top: calc(16px + 14px);
+                    right: 10px;
+                }
+            }
+    
+            .answer {
+                padding: 10px 0px 15px;
+                gap: 14px;
+            }
+        }
+    
+        &-form {
+            .form {
+                &-wrapper {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 240px 1fr;
+                    grid-gap: 10px;
+                }
+    
+                &-content {
+    
+                    .title {
+                        padding: 30px 0px 0px 150px;
+                        font-size: 20px;
+                        margin-bottom: 36px;
+                    }
+    
+                    .desc {
+                        padding-left: 150px;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+    
+                &-items {
+                    box-shadow: none;
+                    background: transparent;
+                    border-radius: 0px;
+                    padding: 0;
+                    position: relative;
+    
+                    &::before {
+                        display: none;
+                    }
+    
+    
+                    form {
+                        @include flex-col(16px);
+                    }
+                
+                    .wpcf7-list-item {
+                        margin: 0;
+                    }
+                
+                    .form-item {
+                        width: 100%;
+                        padding: 22px 0px 0px;
+                        display: flex;
+                        align-items: end;
+                        justify-content: space-between;
+                
+                        label {
+                            cursor: pointer;
+                            position: relative;
+                            padding-left: 25px;
+                            &::before {
+                                content: '';
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 4px;
+                                border: 2px solid $text;
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translate(0, -50%);
+                            }
+                        }
+                
+                        input:checked ~ label {
+                            &::before {
+                                background: $text url('../img/icons/checkbox-ok.svg') no-repeat center;
+                                background-size: 60% 60%;
+                            }
+                        }
+                
+                        button[type=submit] {
+                            font-size: 16px;
+                        }
+                     }
+                }
+            }
+        }
+    }   
+}

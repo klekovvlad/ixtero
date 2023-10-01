@@ -1,0 +1,393 @@
+.cartpage {
+    padding: 48px 0px 112px;
+
+    .section-titles {
+        padding: 38px 0px 0px;
+    }
+
+    &-wrapper {
+        padding: 32px 0px 0px;
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        grid-gap: 53px;
+    }
+
+    &-items {
+        @include flex-col(25px);
+    }
+
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    &-item {
+        background: $lightbg;
+        border-radius: 10px 0px 10px 10px;
+        padding: 25px 75px 25px 32px;
+        position: relative;
+
+        .title {
+            @include font(700);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            @include font(700);
+            color: #878787;
+        }
+
+        .color {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            margin-bottom: 10px;
+            
+            &-value {
+                width: 28px;
+                height: 28px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .pallet {
+            @include font(400);
+
+            &-value {
+                font-weight: 600;
+            }
+        }
+
+        &-remove {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #EBEBEB;
+            border-radius: 0px 0px 0px 10px;
+            padding: 10px 15px;
+
+            a.remove {
+                color: rgba($color: $text, $alpha: 0.5) !important;
+
+                &:hover {
+                    color: rgba($color: $text, $alpha: 0.5) !important;
+                    background: transparent !important;
+                }
+            }
+        }
+
+        &-multiple {
+            padding: 4px 0px 0px;
+            @include font(400);
+            color: rgba($color: $text, $alpha: .4);
+        }
+    }
+
+    &-info {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        grid-gap: 30px;
+    }
+
+    &-thumb {
+        img {
+            width: 220px;
+            height: 124px;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &-value {
+        padding: 15px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+
+        .quantity {
+            position: relative;
+            overflow: hidden;
+            width: 206px;
+            height: 45px;
+            border: 1px solid #E1E1E1;
+            border-radius: 10px;
+            input[type=text] {
+                text-align: center;
+                font-size: 18px;
+                @include font(400);
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                pointer-events: none;
+            }
+
+            &-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                z-index: 4;
+                @include font(700);
+                font-size: 21px;
+                line-height: 1;
+                width: 42px;
+                height: 100%;
+                top: 0;
+                background: transparent;
+                cursor: pointer;
+
+                &:nth-child(3) {
+                    left: 0;
+                    border-right: 1px solid #E1E1E1;
+                }
+
+                &:last-child {
+                    right: 0;
+                    border-left: 1px solid #E1E1E1;
+                }
+            }
+        }
+
+        .subtotal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #E2E2E2;
+            border-radius: 10px;
+            width: 206px;
+            height: 45px;
+            font-size: 18px;
+            @include font(500);
+        }
+    }
+
+    &-subtotal {
+        background: $lightbg;
+        border-radius: 10px;
+        padding: 32px 38px;
+
+        .subtotal {
+            font-size: 21px;
+            @include font(400);
+            &-value {
+                display: inline;
+                font-weight: 700;
+            }
+
+            &-desc {
+                padding: 12px 0px 0px;
+                font-size: 14px;
+                color: rgba($color: $text, $alpha: 0.4);
+            }
+        }
+    }
+
+    .woocommerce-billing-fields__field-wrapper {
+        @include flex-col(8px);
+    }
+
+    .wc_payment_methods {
+        display: none;
+    }
+
+    .address-field {
+        display: none;
+    }
+
+    .address-message {
+        font-size: 14px;
+        color: rgba($color: $text, $alpha: 0.4);
+        padding: 12px 0px 0px;
+    }
+
+    .woocommerce-checkout #payment {
+        background: transparent;
+        padding: 58px 0px 0px;
+        border-radius: 0;
+    }
+
+    .woocommerce #payment #place_order {
+        width: 100%;
+        background: $accent;
+        color: #fff;
+        font-size: 18px;
+        @include font(500);
+        padding: 7px 0px;
+        border-radius: 10px;
+    }
+
+    .woocommerce-checkout #payment div.form-row  {
+        margin: 0;
+        padding: 0;
+    }
+
+    .woocommerce-billing-fields {
+        h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    }
+
+    button[name=update_cart] {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .cartpage {
+        padding: 36px 0px 68px;
+    
+        .section-titles {
+            padding: 20px 0px 0px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+    
+        &-wrapper {
+            padding: 36px 0px 0px;
+            grid-template-columns: 1fr;
+            grid-gap: 42px;
+        }
+    
+        &-items {
+            gap: 12px;
+        }
+    
+        &-inner {
+            gap: 10px;
+
+            .top {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+
+                .title {
+                    flex: 0 0 100%;
+                    margin-bottom: 0;
+                }
+
+                .color {
+                    flex: 0 0 30%;
+                    margin-bottom: 0;
+                }
+                
+                .pallet {
+                    flex: 0 0 60%;
+                }
+            }
+            
+        }
+    
+        &-item {
+            border-radius: 10px;
+            padding: 26px 22px;
+            position: relative;
+    
+            &-remove {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: #EBEBEB;
+                border-radius: 0px 0px 0px 10px;
+                padding: 10px 15px;
+    
+                a.remove {
+                    color: rgba($color: $text, $alpha: 0.5) !important;
+    
+                    &:hover {
+                        color: rgba($color: $text, $alpha: 0.5) !important;
+                        background: transparent !important;
+                    }
+                }
+            }
+    
+            &-multiple {
+                font-size: 12px;
+            }
+        }
+    
+        &-info {
+            grid-template-columns: 1fr;
+            grid-gap: 25px;
+        }
+    
+        &-thumb {
+            grid-row-start: 1;
+            img {
+                width: 160px;
+                height: 90px;
+            }
+        }
+    
+        &-value {
+            padding: 12px 0px 0px;
+            flex-direction: column;
+            gap: 8px;
+    
+            .quantity {
+                width: 100%;
+    
+                &-btn {
+                    background: $accent;
+                    color: #fff;
+    
+                    &:nth-child(3) {
+                        left: 0;
+                        border-right: 1px solid $accent;
+                    }
+    
+                    &:last-child {
+                        right: 0;
+                        border-left: 1px solid $accent;
+                    }
+                }
+            }
+    
+            .subtotal {
+                width: 100%;
+            }
+        }
+    
+        &-subtotal {
+            background: $brand;
+            padding: 15px 22px;
+    
+            .subtotal {
+    
+                &-desc {
+                    padding: 8px 0px 0px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: $text;
+                }
+            }
+        }
+    
+        .woocommerce-checkout #payment {
+            background: transparent;
+            padding: 58px 0px 0px;
+            border-radius: 0;
+        }
+    
+        .woocommerce-billing-fields {
+            h3 {
+                font-size: 21px;
+            }
+        }
+    
+    }
+}

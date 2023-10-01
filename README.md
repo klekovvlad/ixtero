@@ -1,0 +1,1 @@
+## Интернет-магазин IXTERO.RU тема на WordPress + Woocommerce

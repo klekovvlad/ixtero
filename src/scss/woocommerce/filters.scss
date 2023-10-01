@@ -1,0 +1,344 @@
+.wcpf-filter {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.09);
+    border-radius: 23px;
+    width: calc(100% + 80px);
+    position: relative;
+    left: -80px;
+    padding: 30px 20px 88px 0px;
+    overflow: hidden;
+}
+
+.wcpf-scrollbar.wcpf-front-element .wcpf-content {
+    overflow: visible !important;
+}
+
+.wcpf-heading-label {
+    @include font(600);
+    color: $text !important;
+    text-transform: none !important;
+    font-size: 18px !important;
+    padding: 8px 0px 8px 80px !important;
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item .wcpf-input-container {
+    margin-top: 0;
+    transform: translate(0, 0);
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-children-container {
+    @include flex-col(8px)
+}
+
+.wcpf-item-label {
+    position: relative;
+    left: -29px;
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-children-container {
+    padding-left: 30px;
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item .wcpf-checkbox-label {
+    color: $text;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item .wcpf-input-container {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid transparent;
+
+    &::after {
+        opacity: 0;
+        content: '';
+        width: 10px !important;
+        height: 10px !important; 
+        border-radius: 50% !important;
+        background: $brand !important;
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        border: none !important;
+    }
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item .wcpf-checkbox-label:before {
+    content: '';
+    width: 100px;
+    height: 1px;
+    background: $brand;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+}
+
+.wcpf-checkbox-item.checked > .wcpf-item-inner > .wcpf-checkbox-label:before {
+    opacity: 1 !important;
+}
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item.checked > .wcpf-checkbox-item-inner > .wcpf-checkbox-label .wcpf-input-container {
+    border: 1px solid $brand;
+}   
+
+.wcpf-field-checkbox-list .wcpf-checkbox-list .wcpf-checkbox-item.checked > .wcpf-checkbox-item-inner > .wcpf-checkbox-label .wcpf-input-container::after {
+    opacity: 1 !important;
+}   
+
+.wcpf-item-inner,
+.wcpf-checkbox-list,
+.wcpf-color-list {
+    @include flex-col(7px);
+}
+
+.wcpf-color-item {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 4px !important;
+    position: relative;
+    &::before {
+        content: attr(title);
+        font-size: 16px;
+        padding-left: 30px;
+        display: inline-block;
+        min-width: max-content;
+    }
+
+    &::after {
+        content: '\25CF' !important;
+        color: $brand !important;
+        font-size: 18px !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+        position: absolute !important;
+        width: 100px !important;
+        height: 1px !important;
+        background: $brand !important;
+        left: 0 !important;
+        top: 50% !important;
+        transform: translate(calc(-100% - 10px), -50%) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: end !important;
+        opacity: 0;
+        margin: 0 !important;
+        border: none !important;
+    }
+
+    &.selected {
+        color: $brand;
+
+        &::after {
+            opacity: 1 !important;
+        }
+    }
+}
+
+.wcpf-scrollbar.wcpf-front-element .wcpf-content {
+    overflow: auto !important;
+}
+
+.wcpf-field-price-slider .wcpf-price-slider {
+    overflow: hidden !important;
+    padding: 20px 10px 0px 80px;
+}
+
+.wcpf-scrollbar.wcpf-front-element .wcpf-content,
+.wcpf-content {
+    max-height: 225px !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbartrack $scrollbar;
+    padding-left: 80px;
+    
+    &::-webkit-scrollbar {
+        width: 5px;
+        background: $scrollbar;
+        border-radius: 5px;
+    }
+
+    &::-ms-track {
+        width: 5px;
+        background: $scrollbar;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbartrack;
+        border-radius: 5px;
+    }
+
+    &::-ms-thumb {
+        background: $scrollbartrack;
+        border-radius: 5px;
+    }
+}
+
+.wcpf-field-price-slider .ui-slider-horizontal {
+    height: 2px;
+}
+
+.wcpf-field-price-slider .wcpf-price-slider .ui-widget-content {
+    background-color: #C7C7C7;
+}
+
+.wcpf-field-price-slider .ui-slider .ui-slider-range {
+    background-color: $brand;
+}
+
+.wcpf-field-price-slider .ui-slider .ui-slider-handle {
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: $brand;
+    top: -6px;
+}
+
+.ui-state-active {
+    width: 27px !important;
+    height: 27px !important;
+    top: -12px !important;
+}
+
+.wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-price-slider-min-max-inputs {
+    gap: 18px;
+}
+
+.wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-max-input, .wcpf-field-price-slider.wcpf-display-min-max-inputs .wcpf-min-input {
+    padding: 5px 20px;
+    @include font(300);
+    font-size: 16px;
+    text-align: center;
+    color: $text;
+    border: 1px solid #E1E1E1;
+    border-radius: 8px;
+}
+
+.wcpf-field-button .wcpf-button {
+    text-align: left;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.09);
+    border-radius: 0px 23px 23px 0px;
+    padding: 12px 24px 12px 108px;
+    // width: calc(100% + 80px);
+    position: relative;
+    border: none;
+    @include font(600);
+    font-size: 18px;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 80px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &:hover {
+        background: #fff;
+        color: $text;
+    }
+}
+
+.filters-apply {
+    margin: 30px 0px 10px !important;
+    padding: 0 !important;
+    .wcpf-button {
+        &::before {
+            background-image: url('../img/icons/ic_round-check.svg');
+        }
+    }
+}
+
+.filters-reset {
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0.5;
+
+    .wcpf-button {
+        &::before {
+            background-image: url('../img/icons/Reset.svg');
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .filter-button {
+        color: #fff;
+        background: #191919;
+        border-radius: 9px;
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include font(500);
+        font-size: 16px;
+
+        &.open {
+            background: $brand;
+            border-radius: 9px 9px 0px 0px;
+        }
+    }
+
+    .wcpf-filter {
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+        border-radius: 0px 0px 9px 9px;
+        width: 100%;
+        left: 0px;
+        padding: 36px 22px 42px 0px;
+        overflow: hidden;
+
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        transition: opacity .3s linear;
+        z-index: 3;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    
+    .filters-apply {
+        .wcpf-button {
+            background: $brand;
+        }
+    }
+
+    .wcpf-heading-label {
+        padding: 8px 0px 8px 48px !important;
+    }
+    .wcpf-scrollbar.wcpf-front-element .wcpf-content,
+    .wcpf-content {
+        padding-left: 48px;
+    }
+    .wcpf-field-button .wcpf-button {
+        padding: 12px 24px 12px 82px;
+
+        &::before {
+            left: 48px;
+
+        }
+    }
+    .wcpf-field-price-slider .wcpf-price-slider {
+        padding: 20px 10px 0px 48px;
+    }
+}

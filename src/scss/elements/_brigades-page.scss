@@ -1,0 +1,26 @@
+.brigadespage {
+    padding: 0px 0px 100px;
+    &-titles {
+        padding: 48px 0px 0px;
+    }
+
+    .section-titles {
+        padding: 38px 0px 0px;
+    }
+
+    .pagination-category {
+        padding: 70px 0px 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .brigadespage {
+    
+        .section-titles {
+            padding: 28px 0px 0px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+    }
+}
